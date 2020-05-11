@@ -1,0 +1,19 @@
+{
+    "name": "otv5125/code",
+    "description": "library generate code",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nilov Mikhail",
+            "email": "OTV5125@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Otv5125\\Code\\": "src/"
+        }
+    },
+    "require": {}
+}
