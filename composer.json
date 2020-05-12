@@ -1,7 +1,7 @@
 {
     "name": "otv5125/code",
     "description": "library generate code",
-    "type": "stable",
+    "type": "project",
     "license": "MIT",
     "authors": [
         {
@@ -9,7 +9,7 @@
             "email": "OTV5125@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Otv5125\\Code\\": "src/"
