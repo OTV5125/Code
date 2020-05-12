@@ -11,8 +11,15 @@ namespace Otv5125\Code;
 
 class Code
 {
-    static public function generateCode($code, $i){
-        if (empty($code)) return 'A';
+    /**
+     * @param $code
+     * @return bool|string
+     */
+    static public function generateCode($code){
+        if (is_null($code)){
+            return 'A';
+        }
+        $i = (isset(func_get_args()[1]))?func_get_args()[1]:-1;
         $len_string = strlen($code);
         if (ord(substr($code, $i, 1)) !== 0 && ord(substr($code, $i, 1)) !== 122) {    //Проверка последнего символа в коде
             $new_code = substr($code, 0, $i);
@@ -29,7 +36,9 @@ class Code
             $code = 'A' . str_repeat("A", $len_string);        //Обнуляем все последующий символы после измененного
             return $code;
         } elseif (ord(substr($code, $i, 1)) === 122) {
-            return SELF::generate_code($code, --$i);     // Запуск рекурсивного метода в случае если последний символ является последним символом в UTF-8
+            return SELF::generateCode($code, --$i);     // Запуск рекурсивного метода в случае если последний символ является последним символом в UTF-8
+        } else{
+            return false;
         }
     }
 }
